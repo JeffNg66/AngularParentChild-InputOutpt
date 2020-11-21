@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Subject } from 'rxjs';
+import { Subject } from 'rxjs';  // Step 1 of 11 ParentClick-ChildCount
 
 @Component({
   selector: 'app-root',
@@ -9,15 +9,15 @@ import { Subject } from 'rxjs';
 })
 export class AppComponent {
   
-  parentTxtValue: String;
-  parentClick:Subject<void> = new Subject<void>();
-  childTextBoxValue: String;
+  parentTxtValue: String;     // Step 3 of 6 Parent-to-Child
+  parentClick:Subject<void> = new Subject<void>(); // Step 2 of 11 ParentClick-ChildCount
+  childTextBoxValue: String;  //  Step 9 of 11 Child-to-Parent
 
-  onParentButtonClick() {
+  onParentButtonClick() {   // Step 4 of 11 ParentClick-ChildCount
     this.parentClick.next();
   }
 
-  updateInChildValue(event) {
+  updateInChildValue(event) {   //  Step 10 of 11 Child-to-Parent
     this.childTextBoxValue = event;
 
   }
